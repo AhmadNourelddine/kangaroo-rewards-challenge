@@ -29,8 +29,8 @@ const AllSurveys = () => {
       {surveys && (
         <table style={{ margin: "auto" }}>
           <tr>
-            <th>Survey Name</th>
-            <th>Survey Code</th>
+            <th>Name</th>
+            <th>Code</th>
           </tr>
           {surveys.map((item) => (
             <tr>
