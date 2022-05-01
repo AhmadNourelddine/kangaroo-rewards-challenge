@@ -99,7 +99,7 @@ const SurveyComponent = (props) => {
       .then((response) => {
         setSurvey(response.data);
         setmcqQuestions(response.data[0]);
-        setnumericQuestions(response.data[0]);
+        setnumericQuestions(response.data[1]);
         console.log(response);
       })
       .catch((e) => {
