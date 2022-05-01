@@ -54,8 +54,8 @@ const SurveyComponent = (props) => {
     }
     let object = {
       survey: {
-        name: props.name,
-        code: props.code,
+        name: window.localStorage.getItem("name"),
+        code: window.localStorage.getItem("code"),
       },
       questions: [
         {
@@ -67,6 +67,9 @@ const SurveyComponent = (props) => {
           answer: answers["numericAnswer"],
         },
       ],
+      date: {
+        date: answers["date"],
+      },
     };
 
     console.log(object);
@@ -88,7 +91,7 @@ const SurveyComponent = (props) => {
 
   const getSurveyData = async () => {
     let object = {
-      code: props.code,
+      code: window.localStorage.getItem("code"),
     };
     console.log(object);
     await axios
@@ -110,8 +113,8 @@ const SurveyComponent = (props) => {
 
   return (
     <div className="App">
-      <h1>Survey {props.name}</h1>
-      <h2>Code {props.code}</h2>
+      <h1>Survey {window.localStorage.getItem("name")}</h1>
+      <h2>Code {window.localStorage.getItem("code")}</h2>
       <div id="surveyElement"></div>
       <Survey.Survey json={json} onComplete={onCompleteadd} />
     </div>
