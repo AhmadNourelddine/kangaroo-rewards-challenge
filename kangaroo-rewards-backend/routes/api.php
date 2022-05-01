@@ -15,7 +15,8 @@ use App\Http\Controllers\ApiController;
 |
 */
 Route::get('/survey-types', [ApiController::class, 'surveysTypes']);
-Route::post('/survey-questions', [ApiController::class, 'surveyQuestions']); 
+Route::post('/survey-questions', [ApiController::class, 'surveyQuestions']);
+Route::post('/survey-answers', [ApiController::class, 'surveyAnswers']); 
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
